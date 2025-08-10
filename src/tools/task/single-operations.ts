@@ -3,22 +3,22 @@
  * SPDX-License-Identifier: MIT
  *
  * ClickUp MCP Single Task Operations
- * 
+ *
  * This module defines tools for single task operations including creating,
  * updating, moving, duplicating, and deleting tasks, as well as retrieving
  * task details and comments.
  */
 
-import { 
+import {
   ClickUpComment,
-  ClickUpTask, 
+  ClickUpTask,
   CreateTaskData,
-  TaskPriority, 
+  TaskPriority,
   UpdateTaskData
 } from '../../services/clickup/types.js';
 import { parseDueDate } from '../utils.js';
 import { clickUpServices } from '../../services/shared.js';
-import { 
+import {
   formatTaskData,
   resolveListIdWithValidation,
   validateTaskUpdateData,
@@ -134,6 +134,7 @@ export const createTaskTool = {
               description: "ID of the custom field"
             },
             value: {
+              type: "string",
               description: "Value for the custom field. Type depends on the field type."
             }
           },
@@ -224,6 +225,7 @@ export const updateTaskTool = {
               description: "ID of the custom field"
             },
             value: {
+              type: "string",
               description: "Value for the custom field. Type depends on the field type."
             }
           },
@@ -499,4 +501,4 @@ export const deleteTaskTool = {
       }
     }
   }
-}; 
+};
